@@ -21,6 +21,7 @@ Este repositorio contiene un template para ayudantías de la PUC en [Typst](http
 El modulo de template está en la carpeta `modules`. Copia dicha carpeta en tu proyecto y crea tu archivo typst más o menos así:
 
 ```yaml
+
 #import "modules/template.typ": *
 
 #show: doc => project(
@@ -39,17 +40,32 @@ El modulo de template está en la carpeta `modules`. Copia dicha carpeta en tu p
 
 #enum[
 
-#lorem(20)
+// Espacio para la pregunta 1
+#lorem(10)
 
 #solucion[
-#lorem(40)
-
+#lorem(10)
 ]
 
 ][
-
+// Espacio para la pregunta 2
 #lorem(20)
+
+#solucion[
+#lorem(10)
 ]
+
+][
+// Espacio para la pregunta 3
+#lorem(40)
+
+
+#solucion[
+#lorem(10)
+]
+
+]
+
 ```
 
 ![Example](./example.png)
