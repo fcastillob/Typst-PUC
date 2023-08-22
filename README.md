@@ -1,4 +1,18 @@
+*Fork del [repositorio de Wh4rp](https://github.com/Wh4rp/Typst-PUC)*
+
+Hay ligeras modificaciones como 
+
+- Smallcaps para el encabezado
+- Basta con los nombres para `ayudante` y `docente`
+- Modificación a la presentación de las soluciones
+- Tipo de letra `New Computer Modern` utilizada en `LaTeX`.
+
+Aún queda pendiente un mejor manejo de la enumeración 
+
+
 # Template para ayudantías PUC
+
+
 
 Este repositorio contiene un template para ayudantías de la PUC en [Typst](https://typst.app/).
 
@@ -8,38 +22,33 @@ El modulo de template está en la carpeta `modules`. Copia dicha carpeta en tu p
 
 ```yaml
 #import "modules/template.typ": *
+
 #show: doc => project(
     curso: (
-        sigla: "IIC2213",
-        nombre: "Lógica para ciencia de la computación",
-        departamento: "Departamento de Ciencia de la Computación",
+        sigla: "MAT0000",
+        nombre: "Curso",
+        departamento: "Departamento de Matemáticas",
+        escuela: "Facultad de Matemática",
     ),
-    autor: (
-        nombre: "Fulano",
-        apellido: "De Tal",
-        email: "fulano.de.tal@uc.cl",
-    ),
-    numero_de_ayudantia: 4,
-    fecha: "25 de septiembre de 2021",
+    docente: "Nombre",
+    ayudante: "Nombre",
+    numero_de_ayudantia: 1,
+    fecha: "1 de enero de 2023",
     body: doc
 )
 
-#problem[
-    #lorem(50)
-    + #lorem(10)
-    + #lorem(10)
+#enum[
 
-    #solution[
-        #lorem(20)
-        + #[
-            #lorem(4)
-            $ integral_0^x^2 = 1/3 x^3 $
-        ]
-        + #[
-            #lorem(10)
-            $ sum_(i=1)^n i = 1/2 n (n+1) $
-        ]
-    ]
+#lorem(20)
+
+#solucion[
+#lorem(40)
+
+]
+
+][
+
+#lorem(20)
 ]
 ```
 

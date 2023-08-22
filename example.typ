@@ -1,34 +1,44 @@
 #import "modules/template.typ": *
+
 #show: doc => project(
     curso: (
-        sigla: "IIC1000",
-        nombre: "Introucción a los computadores y a la programación",
-        departamento: "Departamento de Ciencia de la Computación",
+        sigla: "MAT0000",
+        nombre: "Curso",
+        departamento: "Departamento de Matemáticas",
+        escuela: "Facultad de Matemática",
     ),
-    autor: (
-        nombre: "Fulano",
-        apellido: "De Tal",
-        email: "fulano.de.tal@uc.cl",
-    ),
-    numero_de_ayudantia: 4,
-    fecha: "25 de septiembre de 2021",
+    docente: "Nombre",
+    ayudante: "Nombre",
+    numero_de_ayudantia: 1,
+    fecha: "1 de enero de 2023",
     body: doc
 )
 
-#problem[
-    #lorem(50)
-    + #lorem(10)
-    + #lorem(10)
+#enum[
 
-    #solution[
-        #lorem(20)
-        + #[
-            #lorem(4)
-            $ integral_0^x^2 = 1/3 x^3 $
-        ]
-        + #[
-            #lorem(10)
-            $ sum_(i=1)^n i = 1/2 n (n+1) $
-        ]
-    ]
+// Espacio para la pregunta 1
+#lorem(10)
+
+#solucion[
+#lorem(10)
 ]
+
+][
+// Espacio para la pregunta 2
+#lorem(20)
+
+#solucion[
+#lorem(10)
+]
+
+][
+// Espacio para la pregunta 3
+#lorem(40)
+
+
+#solucion[
+#lorem(10)
+]
+
+]
+

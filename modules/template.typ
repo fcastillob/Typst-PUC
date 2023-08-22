@@ -9,13 +9,14 @@
     breakable: true,
 )
 
-#let solution = thmplain(
-    "solution",
+#let solucion = thmplain(
+    "solucion",
     "Solución",
     separator: h(0.2em),
     base_level: 0,
+    radius: 0pt,
     inset: 1.2em,
-    stroke: rgb("#68ff68") + 1pt,
+    stroke: (left: 1pt),
     breakable: true,
 ).with(numbering: none)
 
@@ -23,32 +24,34 @@
     curso: (
         sigla: none,
         nombre: none,
+        escuela: none,
         departamento: none,
     ),
-    autor: (
-        nombre: none,
-        apellido: none,
-        email: none,
-    ),
+    docente: none,
+    ayudante: none,
     numero_de_ayudantia: none,
     fecha: none,
     body: none,
 ) = {
-    set page(margin: (x: 2.5cm, y: 2cm), numbering: "1",)
-    set text(size: 11pt)
-    set enum(numbering: "a)", indent: 10pt)
+    set page(margin: (x: 2.5cm, y: 2cm))
+    set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
+    set text(font: "New Computer Modern")
+    show raw: set text(font: "New Computer Modern Mono")
+    show par: set block(spacing: 0.55em)
+    show heading: set block(above: 1.4em, below: 1em)
 
     grid(
         columns: (60pt, auto),
         rows: (auto, auto),
         column-gutter: 10pt,
         image("uc.svg"),
-        align(horizon)[
+        smallcaps(align(horizon)[
             Pontificia Universidad Católica de Chile\
-            Escuela de Ingeniería\
+            #curso.escuela\
             #curso.departamento\
-            #autor.nombre #autor.apellido - #link("mailto:" + autor.email, autor.email)
-        ],
+            Docente: #docente\
+            Ayudante: #ayudante 
+        ]),
     )
 
     align(center)[
